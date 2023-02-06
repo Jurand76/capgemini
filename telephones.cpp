@@ -50,7 +50,7 @@ void addPhone() {
 
 void deletePhone() {
     int index;
-    cout << "Enter index of phone to delete: ";
+    cout << "Enter index of phone to delete (0 - " << to_string(phones.size() - 1) << "): ";
     cin >> index;
     if (index < 0 || index >= phones.size()) {
         cout << "Invalid index!" << endl;
