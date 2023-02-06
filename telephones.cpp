@@ -20,14 +20,14 @@ struct Phone {
 };
 
 vector<Phone> phones;
-map<string, int> brand_count;
+map<string, int> brand_count;         // brand cound - needed to calculate max quantity of telephones
 
 void emptyLine() {
     cout << endl;
 }
 
 void addPhone() {
-    Phone p;
+    Phone p;                  // new object
     emptyLine();
     cout << "Enter brand name                 : ";
     cin >> p.brand;
@@ -61,7 +61,7 @@ void deletePhone() {
     cout << "Phone deleted successfully!" << endl;
 }
 
-void showAllPhones() {
+void showAllPhones() {                          // showing list of all phones with rounded price and screen size to 2 places
     string fullSpec, sizeText, priceText;
     int index = 0;
     cout << "LIST OF PHONES WITH INDEX" << endl << endl;
@@ -111,7 +111,7 @@ void showByFormFactorAndScreenSize() {
     }
 }
 
-void showMaxBrand() {
+void showMaxBrand() {                               // shows brand with max quantity of phones
     int max_count = 0;
     string max_brand;
     for (pair<string, int> p : brand_count) {
@@ -123,7 +123,7 @@ void showMaxBrand() {
     cout << "Brand with maximum phones: " << max_brand << endl;
 }
 
-void showTop3ScreenSizes() {
+void showTop3ScreenSizes() {                
     map<float, int> screen_count;
     for (Phone p : phones) {
         screen_count[p.screen_size]++;
